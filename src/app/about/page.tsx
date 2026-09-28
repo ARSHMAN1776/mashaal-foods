@@ -33,7 +33,7 @@ const verticals = [
     name: "Mashaal Rent A Car",
     sector: "Mobility & Transportation",
     detail: "Corporate fleet and executive transit across Punjab",
-    status: "Upcoming",
+    status: "Active",
   },
 ];
 
