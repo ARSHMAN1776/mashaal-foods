@@ -10,6 +10,33 @@ export const metadata: Metadata = {
     "Mashaal Food is the food and consumer vertical of Mashaal Group, bringing disciplined sourcing and honest pricing to fast food in Rahim Yar Khan and Lahore.",
 };
 
+const verticals = [
+  {
+    name: "Mashaal Petroleum",
+    sector: "Energy & Fuel Forecourts",
+    detail: "Total PARCO, Khanpur Road, RYK · PSO, Raiwind Road, Lahore",
+    status: "Active",
+  },
+  {
+    name: "Mashwani Shipping L.L.C.",
+    sector: "Global Logistics & Freight",
+    detail: "Dubai, UAE · Authorized NVOCC, founded 2017",
+    status: "Active",
+  },
+  {
+    name: "Mashaal Food",
+    sector: "Food & Consumer Products",
+    detail: "Total Pump, Khanpur Road, RYK · Lahore opening next",
+    status: "You're Here",
+  },
+  {
+    name: "Mashaal Rent A Car",
+    sector: "Mobility & Transportation",
+    detail: "Corporate fleet and executive transit across Punjab",
+    status: "Upcoming",
+  },
+];
+
 const pillars = [
   {
     title: "Verified Sourcing",
@@ -128,6 +155,50 @@ export default function AboutPage() {
                 </h3>
                 <p className="mt-2 text-[13.5px] leading-relaxed text-ink-muted">
                   {pillar.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-paper py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <SectionLabel>One Holding, Four Verticals</SectionLabel>
+          <h2 className="font-display text-[32px] sm:text-[40px] leading-[1] text-ink text-balance max-w-xl">
+            Part of Mashaal Group.
+          </h2>
+          <p className="mt-4 max-w-lg text-[14px] leading-relaxed text-ink-muted">
+            Mashaal Group is a holding company built across energy, logistics,
+            food and mobility — each vertical run independently, backed by
+            one standard of capital discipline and governance.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {verticals.map((v) => (
+              <div
+                key={v.name}
+                className={`plate-card p-5 ${v.status === "You're Here" ? "border-ember/40" : ""}`}
+              >
+                <span
+                  className={
+                    v.status === "You're Here"
+                      ? "badge-ember"
+                      : v.status === "Active"
+                        ? "inline-flex items-center rounded-full border border-line px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-ink-muted"
+                        : "inline-flex items-center rounded-full border border-line px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-ink-faint"
+                  }
+                >
+                  {v.status}
+                </span>
+                <h3 className="mt-4 font-display text-[19px] leading-tight text-ink">
+                  {v.name}
+                </h3>
+                <p className="mt-1 text-[12px] font-bold uppercase tracking-wide text-ember">
+                  {v.sector}
+                </p>
+                <p className="mt-3 text-[13px] leading-relaxed text-ink-muted">
+                  {v.detail}
                 </p>
               </div>
             ))}

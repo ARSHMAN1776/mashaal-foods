@@ -87,6 +87,33 @@ body::before {
   color: var(--paper);
 }
 
+/* ─── Themed scrollbar ──────────────────────────────────────── */
+html {
+  scrollbar-color: var(--ember) var(--paper-2);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--paper-2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ember);
+  border-radius: 999px;
+  border: 2px solid var(--paper-2);
+  background-clip: padding-box;
+  transition: background-color 0.25s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ember-light);
+  background-clip: padding-box;
+}
+
 .skip-link {
   position: fixed;
   top: -100%;

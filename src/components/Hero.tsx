@@ -25,7 +25,7 @@ export function Hero() {
             "repeating-linear-gradient(-45deg, #241a12 0, #241a12 1px, transparent 1px, transparent 14px)",
         }}
       />
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-14 pb-20 lg:pt-20 lg:pb-24">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-8 pb-20 lg:pt-10 lg:pb-24">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:items-start lg:gap-10">
           {/* Copy */}
           <div>
