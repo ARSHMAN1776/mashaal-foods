@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { FavouritesRail } from "@/components/FavouritesRail";
 import { MenuPreview } from "@/components/MenuPreview";
+import { FreshlyStacked } from "@/components/FreshlyStacked";
 import { HowToOrder } from "@/components/HowToOrder";
 import { WhyUs } from "@/components/WhyUs";
 import { Testimonials } from "@/components/Testimonials";
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <FavouritesRail />
       <MenuPreview />
+      <FreshlyStacked />
       <HowToOrder />
       <WhyUs />
       <Testimonials />
