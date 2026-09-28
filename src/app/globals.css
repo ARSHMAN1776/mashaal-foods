@@ -1,0 +1,378 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────────────────── */
+:root {
+  /* Char — dark charcoal-brown, used for hero/nav/footer/CTA bookends */
+  --char: #1c1712;
+  --char-2: #262019;
+  --char-3: #322a20;
+  --line-dark: rgba(255, 255, 255, 0.1);
+  --line-dark-strong: rgba(234, 75, 31, 0.35);
+
+  /* Paper — warm cream base for content sections (menu boards, tickets) */
+  --paper: #faf3e6;
+  --paper-2: #f1e5cd;
+  --paper-3: #e9d9bb;
+  --ink: #241a12;
+  --ink-muted: rgba(36, 26, 18, 0.68);
+  --ink-faint: rgba(36, 26, 18, 0.45);
+  --line: rgba(36, 26, 18, 0.14);
+  --line-strong: rgba(234, 75, 31, 0.4);
+
+  /* Ember — primary accent, flame / heat */
+  --ember: #ea4b1f;
+  --ember-light: #ff6b3d;
+  --ember-dark: #b93412;
+  --ember-muted: rgba(234, 75, 31, 0.12);
+
+  /* Spice gold — secondary accent */
+  --gold: #d99a2b;
+  --gold-light: #f0bc5c;
+  --gold-muted: rgba(217, 154, 43, 0.14);
+
+  --cream: #faf3e6;
+}
+
+/* ─── Tailwind theme mapping ────────────────────────────────── */
+@theme inline {
+  --color-char: var(--char);
+  --color-char-2: var(--char-2);
+  --color-char-3: var(--char-3);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ember: var(--ember);
+  --color-ember-light: var(--ember-light);
+  --color-ember-dark: var(--ember-dark);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-cream: var(--cream);
+
+  /* Font families */
+  --font-display: var(--font-anton);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-space-mono);
+}
+
+/* ─── Base ─────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* Subtle paper grain so flat cream sections keep texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: var(--ember);
+  color: var(--paper);
+}
+
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 1rem;
+  z-index: 100;
+  background: var(--ember);
+  color: var(--paper);
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 2px;
+}
+
+/* ─── Typography helpers ────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-display), Impact, ui-sans-serif, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.tracked-label {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.label-tag {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ember);
+}
+
+.label-tag-dark {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* ─── Dividers ──────────────────────────────────────────────── */
+.hairline {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--line-strong), transparent);
+}
+
+.hairline-solid {
+  height: 1px;
+  background: var(--line);
+}
+
+.hairline-dark {
+  height: 1px;
+  background: var(--line-dark);
+}
+
+/* ─── Buttons ───────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ember);
+  color: var(--paper);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 14px 30px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: var(--ember-light);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(234, 75, 31, 0.35);
+}
+
+.btn-primary:active {
+  transform: scale(0.98) translateY(0);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 13px 30px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-outline:hover {
+  border-color: var(--ember);
+  color: var(--ember);
+  background: var(--ember-muted);
+}
+
+.btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--paper);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 13px 30px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(250, 243, 230, 0.35);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-outline-light:hover {
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+  background: rgba(217, 154, 43, 0.1);
+}
+
+/* ─── Signature: Order Ticket card ───────────────────────────
+   A perforated receipt-ticket motif used for every deal / menu
+   item — the site's one recurring, on-brief signature element. */
+.ticket {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 1px 0 rgba(36, 26, 18, 0.04);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.ticket::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 14px;
+  right: 14px;
+  height: 1px;
+  background-image: linear-gradient(to right, var(--ink-faint) 50%, transparent 50%);
+  background-size: 10px 1px;
+  background-repeat: repeat-x;
+}
+
+.ticket:hover {
+  transform: translateY(-4px) rotate(-0.6deg);
+  border-color: var(--line-strong);
+  box-shadow: 0 18px 34px -16px rgba(36, 26, 18, 0.35);
+}
+
+.ticket-punch {
+  position: absolute;
+  top: -7px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--paper-2, #f1e5cd);
+  border: 1px solid var(--line);
+}
+
+.ticket-stamp {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-weight: 700;
+  color: var(--ember-dark);
+}
+
+/* ─── Cards & surfaces ────────────────────────────────────── */
+.plate-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.plate-card:hover {
+  border-color: var(--line-strong);
+  box-shadow: 0 20px 44px -20px rgba(36, 26, 18, 0.3);
+}
+
+.char-card {
+  background: var(--char-2);
+  border: 1px solid var(--line-dark);
+  border-radius: 18px;
+}
+
+.badge-ember {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(234, 75, 31, 0.35);
+  background: var(--ember-muted);
+  color: var(--ember-dark);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.badge-gold-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(217, 154, 43, 0.4);
+  background: rgba(217, 154, 43, 0.12);
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ─── Animations ────────────────────────────────────────────── */
+@keyframes rail-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-rail {
+  animation: rail-scroll 42s linear infinite;
+}
+
+.animate-rail:hover {
+  animation-play-state: paused;
+}
+
+@keyframes ember-glow {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1; }
+}
+
+.animate-ember-glow {
+  animation: ember-glow 2.4s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rail,
+  .animate-ember-glow {
+    animation: none !important;
+  }
+  .ticket:hover {
+    transform: none;
+  }
+}
