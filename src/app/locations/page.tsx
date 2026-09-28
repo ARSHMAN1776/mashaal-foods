@@ -6,7 +6,7 @@ import { CTABand } from "@/components/CTABand";
 export const metadata: Metadata = {
   title: "Locations — Mashaal Food",
   description:
-    "Find Mashaal Food in Lahore (Raiwind Road) and Rahim Yar Khan (Khanpur Road). Hours, directions and contact details.",
+    "Find Mashaal Food in Rahim Yar Khan (Khanpur Road) and Lahore (Raiwind Road). Hours, directions and contact details.",
 };
 
 export default function LocationsPage() {

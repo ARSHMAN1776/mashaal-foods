@@ -8,7 +8,7 @@ import { siteConfig, telLink } from "@/config/site";
 export const metadata: Metadata = {
   title: "Contact — Mashaal Food",
   description:
-    "Get in touch with Mashaal Food for orders, feedback or franchise enquiries in Lahore and Rahim Yar Khan.",
+    "Get in touch with Mashaal Food for orders, feedback or franchise enquiries in Rahim Yar Khan and Lahore.",
 };
 
 const quickMessages = [
