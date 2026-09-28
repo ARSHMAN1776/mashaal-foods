@@ -22,7 +22,7 @@ export function FreshlyStacked() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-char py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-char py-20 lg:py-28">
       <div
         className="absolute inset-0 opacity-[0.06] pointer-events-none"
         style={{
@@ -30,7 +30,7 @@ export function FreshlyStacked() {
             "repeating-linear-gradient(-45deg, #ea4b1f 0, #ea4b1f 1px, transparent 1px, transparent 14px)",
         }}
       />
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-16 items-center">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
         <div>
           <SectionLabel dark>Made Fresh, Every Order</SectionLabel>
           <h2 className="font-display text-[36px] sm:text-[46px] leading-[0.95] text-paper text-balance">
@@ -47,7 +47,7 @@ export function FreshlyStacked() {
           <motion.span
             animate={{ opacity: [0.2, 0.4, 0.2], scale: [1, 1.1, 1] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ember/30 blur-[90px]"
+            className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ember/30 blur-[70px]"
             aria-hidden
           />
           <motion.div
@@ -55,7 +55,7 @@ export function FreshlyStacked() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-[620px]"
+            className="relative w-full max-w-[460px]"
           >
             <video
               ref={videoRef}
