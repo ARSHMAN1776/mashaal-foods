@@ -29,14 +29,16 @@ export function WhatsAppInline({
   message,
   label = "Order on WhatsApp",
   className = "",
+  number,
 }: {
   message: string;
   label?: string;
   className?: string;
+  number?: string;
 }) {
   return (
     <a
-      href={whatsappLink(message)}
+      href={whatsappLink(message, number)}
       target="_blank"
       rel="noopener noreferrer"
       className={`group inline-flex items-center gap-2.5 rounded-full border border-ember/40 bg-ember-muted px-5 py-2.5 text-sm font-bold text-ember-dark transition-all hover:bg-ember hover:text-paper hover:border-ember ${className}`}

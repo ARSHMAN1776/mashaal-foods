@@ -4,16 +4,17 @@ const faqs = [
   {
     question: "Do you deliver?",
     answer:
-      "Yes — delivery runs from our Rahim Yar Khan outlet. Message us on WhatsApp with your address and we'll confirm timing before you pay.",
+      "Yes — delivery runs from both our Rahim Yar Khan and Lahore branches. Message the branch on WhatsApp with your address and we'll confirm timing before you pay.",
   },
   {
     question: "What are your hours?",
-    answer: "Daily, 12:00 PM to 2:00 AM, at Total Pump, Khanpur Road, RYK.",
+    answer:
+      "Rahim Yar Khan (Total Pump, Khanpur Road) is open daily, 12:00 PM to 2:00 AM. Lahore (Raiwind) is open daily too — call or WhatsApp the branch to confirm timings.",
   },
   {
-    question: "When does the Lahore branch open?",
+    question: "Where is the Lahore branch?",
     answer:
-      "We're finalizing our Raiwind Road location in Lahore now. Message us on WhatsApp to be notified the day it opens.",
+      "Mashaal Petroleum, Kasur Road, Mohallah Islamabad, Raiwind, Lahore. Call or WhatsApp +92 306 6953677 to order.",
   },
   {
     question: "How do I pay?",

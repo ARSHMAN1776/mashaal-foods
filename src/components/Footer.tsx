@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { siteConfig, telLink } from "@/config/site";
+import { telLink } from "@/config/site";
+import { locations } from "@/data/menu";
 
 const footerLinks = [
   { href: "/menu", label: "Menu" },
@@ -26,7 +27,7 @@ export function Footer() {
             </div>
             <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-paper/60">
               Pizza, zingers, wings, rolls and shawarma — fresh, hygienic and
-              delicious, serving Rahim Yar Khan and soon Lahore.
+              delicious, serving Rahim Yar Khan and Lahore.
             </p>
             <p className="mt-5 label-tag-dark">A Mashaal Group Company</p>
           </div>
@@ -53,14 +54,18 @@ export function Footer() {
             <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-paper/40 mb-4">
               Get In Touch
             </p>
-            <ul className="space-y-3 text-[14px] text-paper/70">
-              <li>
-                <a href={telLink()} className="hover:text-ember-light transition-colors">
-                  {siteConfig.phoneNumber}
-                </a>
-              </li>
-              <li>Total Pump, Khanpur Road, RYK</li>
-              <li>Raiwind Road, Lahore (opening soon)</li>
+            <ul className="space-y-4 text-[14px] text-paper/70">
+              {locations.map((location) => (
+                <li key={location.city}>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-paper/90">
+                    {location.city}
+                  </p>
+                  <a href={telLink(location.phone)} className="mt-1 block hover:text-ember-light transition-colors">
+                    {location.phone}
+                  </a>
+                  <p className="mt-1 text-[13px] text-paper/50">{location.address}</p>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

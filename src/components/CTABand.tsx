@@ -13,8 +13,8 @@ export function CTABand() {
           Hungry? The nearest Mashaal Food is closer than you think.
         </h2>
         <p className="mt-4 text-[15px] text-paper/60 max-w-lg mx-auto">
-          Order ahead on WhatsApp or walk into Total Pump, Khanpur Road, RYK —
-          Lahore opens next.
+          Order ahead on WhatsApp or walk into our Rahim Yar Khan or Lahore
+          branch.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link href="/menu" className="btn-primary">

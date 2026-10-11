@@ -3,7 +3,8 @@ import { PageHeader } from "@/components/PageHeader";
 import { SectionLabel } from "@/components/SectionLabel";
 import { LocationsSection } from "@/components/LocationsSection";
 import { WhatsAppInline } from "@/components/WhatsAppButton";
-import { siteConfig, telLink } from "@/config/site";
+import { telLink } from "@/config/site";
+import { locations } from "@/data/menu";
 
 export const metadata: Metadata = {
   title: "Contact — Mashaal Food",
@@ -34,19 +35,21 @@ export default function ContactPage() {
               Talk to the counter, not a call centre.
             </h2>
             <div className="mt-6 space-y-4 text-[15px] text-ink-muted">
-              <p>
-                <span className="font-bold text-ink">Phone: </span>
-                <a href={telLink()} className="hover:text-ember transition-colors">
-                  {siteConfig.phoneNumber}
-                </a>
-              </p>
+              {locations.map((location) => (
+                <p key={location.city}>
+                  <span className="font-bold text-ink">{location.city}: </span>
+                  <a href={telLink(location.phone)} className="hover:text-ember transition-colors">
+                    {location.phone}
+                  </a>
+                </p>
+              ))}
               <p>
                 <span className="font-bold text-ink">Hours: </span>
-                Daily, 12:00 PM – 2:00 AM
+                Rahim Yar Khan daily, 12:00 PM – 2:00 AM &middot; Lahore open daily
               </p>
               <p>
                 <span className="font-bold text-ink">Branches: </span>
-                Total Pump, Khanpur Road, RYK (open) &middot; Raiwind Road, Lahore (opening soon)
+                Total Pump, Khanpur Road, RYK &middot; Mashaal Petroleum, Kasur Road, Raiwind, Lahore
               </p>
             </div>
           </div>

@@ -6,7 +6,7 @@ import { CTABand } from "@/components/CTABand";
 export const metadata: Metadata = {
   title: "Locations — Mashaal Food",
   description:
-    "Find Mashaal Food in Rahim Yar Khan (Khanpur Road) and Lahore (Raiwind Road). Hours, directions and contact details.",
+    "Find Mashaal Food in Rahim Yar Khan (Khanpur Road) and Lahore (Raiwind). Hours, directions, phone and WhatsApp for each branch.",
 };
 
 export default function LocationsPage() {
@@ -14,8 +14,8 @@ export default function LocationsPage() {
     <>
       <PageHeader
         eyebrow="Where To Find Us"
-        title="Open in RYK. Lahore Next."
-        description="Rahim Yar Khan is live at Total Pump, Khanpur Road — Lahore opens next, with more of Punjab on the way."
+        title="Two Branches. Both Open."
+        description="Rahim Yar Khan at Total Pump, Khanpur Road, and Lahore at Mashaal Petroleum, Raiwind — call or WhatsApp the branch nearest you."
       />
       <LocationsSection compact />
       <CTABand />

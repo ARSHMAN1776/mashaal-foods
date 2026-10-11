@@ -2,6 +2,7 @@ import Image from "next/image";
 import { locations } from "@/data/menu";
 import { SectionLabel } from "@/components/SectionLabel";
 import { telLink } from "@/config/site";
+import { WhatsAppInline } from "@/components/WhatsAppButton";
 
 export function LocationsSection({ compact = false }: { compact?: boolean }) {
   return (
@@ -39,6 +40,11 @@ export function LocationsSection({ compact = false }: { compact?: boolean }) {
                 <div className="mt-4 space-y-2 text-[14px] text-ink-muted">
                   <p>{location.address}</p>
                   <p>{location.hours}</p>
+                  <p>
+                    <a href={telLink(location.phone)} className="font-bold text-ink hover:text-ember transition-colors">
+                      {location.phone}
+                    </a>
+                  </p>
                 </div>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
@@ -49,9 +55,15 @@ export function LocationsSection({ compact = false }: { compact?: boolean }) {
                   >
                     Get Directions
                   </a>
-                  <a href={telLink()} className="btn-primary text-[12px] px-5 py-2.5">
+                  <a href={telLink(location.phone)} className="btn-primary text-[12px] px-5 py-2.5">
                     Call Branch
                   </a>
+                  <WhatsAppInline
+                    number={location.whatsapp}
+                    message={`Hi Mashaal Food ${location.city}! I'd like to place an order.`}
+                    label="Order on WhatsApp"
+                    className="w-full justify-center !py-3 !text-[12px]"
+                  />
                 </div>
               </div>
             </div>

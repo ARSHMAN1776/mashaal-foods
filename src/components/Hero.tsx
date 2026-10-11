@@ -30,7 +30,7 @@ export function Hero() {
           {/* Copy */}
           <div>
             <motion.div variants={fadeUp} initial="hidden" animate="show" custom={0}>
-              <span className="badge-ember">Now Open in Rahim Yar Khan · Lahore Coming Soon</span>
+              <span className="badge-ember">Now Open in Rahim Yar Khan &amp; Lahore</span>
             </motion.div>
 
             <motion.p

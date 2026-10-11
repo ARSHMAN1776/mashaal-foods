@@ -127,7 +127,9 @@ export type Location = {
   address: string;
   hours: string;
   phone: string;
-  status: "Now Open" | "Opening Soon";
+  /** Digits only, country code first, for wa.me links */
+  whatsapp: string;
+  status: "Now Open";
   image: string;
 };
 
@@ -138,16 +140,18 @@ export const locations: Location[] = [
     address: "Total Pump, Khanpur Road, Near Toyota Showroom, Rahim Yar Khan",
     hours: "Daily, 12:00 PM – 2:00 AM",
     phone: "+92 315 6704501",
+    whatsapp: "923156704501",
     status: "Now Open",
     image: "/brand/interior.jpg",
   },
   {
     city: "Lahore",
-    name: "Mashaal Food — Raiwind Road",
-    address: "Raiwind Road, Lahore, Punjab",
-    hours: "Daily, 12:00 PM – 2:00 AM",
-    phone: "+92 315 6704501",
-    status: "Opening Soon",
+    name: "Mashaal Food — Raiwind",
+    address: "Mashaal Petroleum, Kasur Road, Mohallah Islamabad, Raiwind, Lahore",
+    hours: "Open daily",
+    phone: "+92 306 6953677",
+    whatsapp: "923066953677",
+    status: "Now Open",
     image: "/brand/interior.jpg",
   },
 ];

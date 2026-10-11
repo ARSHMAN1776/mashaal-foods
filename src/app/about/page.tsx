@@ -26,7 +26,7 @@ const verticals = [
   {
     name: "Mashaal Food",
     sector: "Food & Consumer Products",
-    detail: "Total Pump, Khanpur Road, RYK · Lahore opening next",
+    detail: "Total Pump, Khanpur Road, RYK · Mashaal Petroleum, Raiwind, Lahore",
     status: "You're Here",
   },
   {
@@ -51,7 +51,7 @@ const pillars = [
   {
     title: "One Outlet First, Done Right",
     description:
-      "Rather than launching thin across many cities, we opened deep at Total Pump, Khanpur Road, RYK — getting the kitchen and supply chain right before Lahore opens next.",
+      "Rather than launching thin across many cities, we opened deep at Total Pump, Khanpur Road, RYK — getting the kitchen and supply chain right before opening our second branch in Raiwind, Lahore.",
   },
 ];
 
